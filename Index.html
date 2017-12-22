@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Base page</title>
+	<script src="https://d3js.org/d3.v3.min.js"></script>
+	<link rel="stylesheet" href="css/base.css">
+</head>
+<body>
+
+
+	<div id="container">
+	</div>
+
+
+</body>
+
+<script> 
+// Change page title  
+d3.select("title").text("2017 - D3 Goals")
+
+// Add goals 
+container = d3.select("#container")
+container.append("h1").text("2017 - D3 Goals")
+container.append("p").text('This page is being dynamically created using D3.' + 
+			   'It\'s creating the page as you load it.'  
+                           )
+container.append("h1").text("Video Training");
+container.append("p").html('☑ <b>Complete</b>: Scott Murray\'s An Introduction to D3.js' +
+                           '<br/>☑ <b>Complete</b>: Scott Murray\'s Intermediate D3.js'
+                          )
+
+// Add classic charts 
+container.append("h3").html("Classic charts using D3 <br/><br/>")
+var simple = [{'text':'Bar', 'page':'simple_bar'}, 
+              {'text':'Scatter', 'page':'scatter_plot'}, 
+              {'text':'Line', 'page':'line_chart'}
+             ]
+var ul = container.append("ul").attr("class", "simplechart")
+
+ul.selectAll('li')
+  .data(simple)
+  .enter()
+  .append('li')
+  .html(function(d) { return "<a href='" + d.page + ".html'>" + d.text + "</a>";});
+
+// Add advanced charts 
+container.append("br")
+container.append("h3").html("Advanced Charts <br/><br/>")
+var complex = ['Aster', 'Gaussian', 'Sortable bar charts', 'Color coded correlation', 'Linear regression']
+var ul = container.append("ul").attr("class", "complexchart")
+ul.selectAll('li')
+  .data(complex)
+  .enter()
+  .append('li')
+  .html(String);
+
+
+ // container.append("div").html("<a href='base_page.html'>New Page</a>");
+
+</script> 
+
+</html>

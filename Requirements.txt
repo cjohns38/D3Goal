@@ -1,0 +1,15 @@
+Complete - Scott Murray's An Introduction to D3.js 
+Complete - Scott Murray's Intermediate D3.js
+
+Classic Chars
+- Bar Chart
+- Scatter Plot
+- Line Graph 
+
+Complex
+- Aster plot
+- Gaussian curve
+- Sortable bar charts
+- Color coded correlation matrix 
+- Linear regression 
+
